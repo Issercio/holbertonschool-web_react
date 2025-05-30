@@ -1,42 +1,47 @@
 interface Student {
-  firstName: string;
-  lastName: string;
-  age: number;
-  location: string;
+    firstName: string;
+    lastName: string;
+    age: number;
+    location: string;
 }
 
 const student1: Student = {
-  firstName: "John",
-  lastName: "Doe",
-  age: 20,
-  location: "New York"
+    firstName: "John",
+    lastName: "Doe",
+    age: 20,
+    location: "London"
 };
 
 const student2: Student = {
-  firstName: "Jane",
-  lastName: "Smith",
-  age: 22,
-  location: "Los Angeles"
+    firstName: "Jane",
+    lastName: "Doe",
+    age: 22,
+    location: "Paris"
 };
 
-const studentsList: Student[] = [student1, student2];
+const studentsList: Array<Student> = [student1, student2];
 
-// Create and append table to document body
-const table = document.createElement('table');
-const tbody = document.createElement('tbody');
+function renderTable(): void {
+    const table = document.createElement('table');
+    const tbody = document.createElement('tbody');
 
-studentsList.forEach((student) => {
-  const row = document.createElement('tr');
-  const nameCell = document.createElement('td');
-  const locationCell = document.createElement('td');
+    studentsList.forEach((student: Student) => {
+        const row = document.createElement('tr');
+        const nameCell = document.createElement('td');
+        const locationCell = document.createElement('td');
 
-  nameCell.textContent = student.firstName;
-  locationCell.textContent = student.location;
+        nameCell.textContent = student.firstName;
+        locationCell.textContent = student.location;
 
-  row.appendChild(nameCell);
-  row.appendChild(locationCell);
-  tbody.appendChild(row);
-});
+        row.appendChild(nameCell);
+        row.appendChild(locationCell);
+        tbody.appendChild(row);
+    });
 
-table.appendChild(tbody);
-document.body.appendChild(table);
+    table.appendChild(tbody);
+    document.body.appendChild(table);
+}
+
+export { Student, studentsList, renderTable };
+
+renderTable();
