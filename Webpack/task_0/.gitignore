@@ -1,9 +1,0 @@
-# Ignore node modules and build output
-node_modules/
-dist/
-*.log
-*.tmp
-# Ignore all JS files except source and config
-*.js
-!src/index.js
-!webpack.config.js
