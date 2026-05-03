@@ -1,20 +1,14 @@
-body {
-  font-family: Arial, sans-serif;
-}
-
 #logo {
   width: 200px;
   height: 200px;
-  background-image: url('../assets/holberton-logo.jpg');
   background-size: 200px 200px;
   background-repeat: no-repeat;
-  margin-bottom: 20px;
+  margin: 0 auto;
 }
 
 #count {
-  display: inline-block;
   font-weight: bold;
-  margin-left: 20px;
+  margin-left: 10px;
   vertical-align: middle;
 }
 
