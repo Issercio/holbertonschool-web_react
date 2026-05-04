@@ -16,8 +16,13 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
-        type: 'asset/resource',
         use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'assets/[name].[ext]',
+            },
+          },
           {
             loader: 'image-webpack-loader',
             options: {
@@ -40,6 +45,7 @@ module.exports = {
             },
           },
         ],
+        type: 'javascript/auto',
       },
     ],
   },
