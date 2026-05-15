@@ -5,7 +5,7 @@ import Notifications from './Notifications.jsx';
 
 function App() {
   const currentYear = getCurrentYear();
-  const footerText = getFooterCopy(true);
+  const footerText = getFooterCopy(false);
   return (
     <>
       <div className="root-notifications">
