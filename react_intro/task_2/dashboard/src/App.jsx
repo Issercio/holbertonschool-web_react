@@ -1,38 +1,37 @@
 import HbSLogo from './assets/holberton-logo.jpg';
 import { getCurrentYear, getFooterCopy } from './utils';
-import './App.css';
 import Notifications from './Notifications.jsx';
 
-function App() {
+export default function App() {
   const currentYear = getCurrentYear();
   const footerText = getFooterCopy(true);
+
   return (
-    <>
-      <div className="root-notifications">
-        <Notifications/>
-      </div>
-      <div className='App-header'>
+    <div className="App">
+
+      <div className="App-header">
         <img src={HbSLogo} alt="holberton logo" />
         <h1>School dashboard</h1>
       </div>
 
-      <div className='App-body'>
+      <div className="App-body">
+        <Notifications />
+
         <p>Login to access the full dashboard</p>
 
-        <label htmlFor="email">Email : </label>
-        <input type="email" name="email" id="email" />
+        <label htmlFor="email">Email</label>
+        <input id="email" type="email" />
 
-        <label htmlFor="password">Password : </label>
-        <input type="password" name="password" id="password" />
+        <label htmlFor="password">Password</label>
+        <input id="password" type="password" />
 
-        <button>OK</button>
+        <button>Ok</button>
       </div>
 
-      <div className='App-footer'>
+      <div className="App-footer">
         <p>Copyright {currentYear} - {footerText}</p>
       </div>
-    </>
-  )
-}
 
-export default App
+    </div>
+  );
+}
