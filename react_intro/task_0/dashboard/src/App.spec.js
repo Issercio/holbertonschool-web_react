@@ -20,7 +20,6 @@ describe('App', () => {
   test('renders the holberton logo image', () => {
     render(<App />);
     const logo = screen.getByAltText(/holberton logo/i);
-    expect(logo).toBeInTheDocument();
-    expect(logo.tagName.toLowerCase()).toBe('img');
+    expect(logo && logo.tagName.toLowerCase() === 'img').toBe(true);
   });
 });
