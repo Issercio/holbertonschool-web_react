@@ -9,7 +9,9 @@ function App() {
 
   return (
     <>
-      <Notifications />
+      <div className="root-notifications">
+        <Notifications />
+      </div>
 
       <div className='App-header'>
         <img src={HbSLogo} alt="holberton logo" />
