@@ -6,11 +6,11 @@ import Notifications from './Notifications.jsx';
 function App() {
   const currentYear = getCurrentYear();
   const footerText = getFooterCopy(false);
+
   return (
     <>
-      <div className="root-notifications">
-        <Notifications/>
-      </div>
+      <Notifications />
+
       <div className='App-header'>
         <img src={HbSLogo} alt="holberton logo" />
         <h1>School Dashboard</h1>
@@ -32,7 +32,7 @@ function App() {
         <p>Copyright {currentYear} - {footerText}</p>
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
