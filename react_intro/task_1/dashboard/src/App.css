@@ -24,9 +24,12 @@
 /************************** App-body **************************/
 .App-body {
   text-align: justify;
-  margin-left: 1rem;
   border-bottom: #e1003c solid 2.5px;
   flex: 1;
+}
+
+.App-body p {
+  margin-left: 1rem;
 }
 
 /************************* App-footer *************************/

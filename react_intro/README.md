@@ -1,17 +1,7 @@
-# React Intro Project
+# React Intro
 
-This repository contains the Holberton School React introduction projects, including Vite, TypeScript, and Webpack setups for various tasks.
-
-## Structure
-- `task_0/` - Vite React dashboard app
-- `task_1/` to `task_5/` - TypeScript projects
-- `Webpack/` - Webpack configuration examples
-
-Each task folder contains its own README and setup instructions.
-
-## Requirements
-- Node.js 20.x.x or greater
-- npm 10.x.x
-
-## License
-Copyright © Holberton School
+Dans ce projet, nous allons apprendre les bases de React. Nous allons :
+  - Apprendre comment créer une application basique avec React
+  - Comment utiliser vite pour développer avec React
+  - Comment ajouter du style inline avec React
+  - Comment ajouter des forms simples avec React
