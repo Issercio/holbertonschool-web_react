@@ -1,6 +1,5 @@
-.notification-items {
-  border: 2px dotted #e1003c;
-  padding: 8px;
-  margin-bottom: 16px;
-  font-family: 'Roboto Slab', 'Times New Roman', Times, serif;
+.Notifications {
+  border: 2px dashed #e0354b;
+  padding: 1rem;
+  margin: 1rem;
 }
