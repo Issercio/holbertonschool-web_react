@@ -8,7 +8,11 @@ function getFooterCopy(isIndex) {
     : 'Holberton School main dashboard';
 }
 
+// CommonJS
 module.exports = {
   getCurrentYear,
   getFooterCopy,
 };
+
+// ES6
+export { getCurrentYear, getFooterCopy };
