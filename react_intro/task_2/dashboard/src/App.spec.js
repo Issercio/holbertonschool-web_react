@@ -4,7 +4,7 @@ import App from './App';
 describe('App component', () => {
   test('Vérification texte h1 App-header', () => {
     render(<App />);
-    const headerh1 = screen.getByRole('heading', { level: 1, name: /School dashboard/ });
+    const headerh1 = screen.getByRole('heading', { level: 1, name: /School Dashboard/ });
     expect(headerh1).toBeInTheDocument();
   });
 
@@ -16,7 +16,7 @@ describe('App component', () => {
 
   test('Vérification texte App-footer', () => {
     render(<App />);
-    const footerp = screen.getByText(/Copyright \d{4} - holberton School/);
+    const footerp = screen.getByText(/Copyright \d{4} - Holberton School/);
     expect(footerp).toBeInTheDocument();
   });
 
@@ -28,23 +28,23 @@ describe('App component', () => {
 
   test('Vérification des inputs associés aux labels', () => {
     render(<App />);
-    const emailInput = screen.getByLabelText(/email/);
-    const passwordInput = screen.getByLabelText(/password/);
+    const emailInput = screen.getByLabelText(/Email/);
+    const passwordInput = screen.getByLabelText(/Password/);
     expect(emailInput).toBeInTheDocument();
     expect(passwordInput).toBeInTheDocument();
   });
 
   test('Vérification du texte des labels', () => {
     render(<App />);
-    const emailLabel = screen.getByLabelText(/email/);
-    const passwordLabel = screen.getByLabelText(/password/);
+    const emailLabel = screen.getByLabelText(/Email/);
+    const passwordLabel = screen.getByLabelText(/Password/);
     expect(emailLabel).toBeInTheDocument();
     expect(passwordLabel).toBeInTheDocument();
   });
 
   test('Vérification du bouton', () => {
     render(<App />);
-    const formButton = screen.getByRole('button', { name: /OK/ });
+    const formButton = screen.getByRole('button', { name: /Ok/ });
     expect(formButton).toBeInTheDocument();
   });
 });
