@@ -1,18 +1,13 @@
-function getCurrentYear() {
-  return new Date().getFullYear();
-}
+const getCurrentYear = () => new Date().getFullYear();
 
-function getFooterCopy(isIndex) {
-  return isIndex
+const getFooterCopy = (isIndex) =>
+  isIndex
     ? 'Holberton School'
     : 'Holberton School main dashboard';
-}
 
-// CommonJS
-module.exports = {
+export { getCurrentYear, getFooterCopy };
+
+export default {
   getCurrentYear,
   getFooterCopy,
 };
-
-// ES6
-export { getCurrentYear, getFooterCopy };
