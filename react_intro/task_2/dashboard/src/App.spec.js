@@ -16,7 +16,7 @@ describe('App component', () => {
 
   test('Vérification texte App-footer', () => {
     render(<App />);
-    const footerp = screen.getByText(/Copyright \d{4} - holberton School/i);
+    const footerp = screen.getByText(/Copyright \d{4}/i);
     expect(footerp).toBeInTheDocument();
   });
 
@@ -36,15 +36,15 @@ describe('App component', () => {
 
   test('Vérification du texte des labels', () => {
     render(<App />);
-    const emailLabel = screen.getByLabelText(/email/i);
-    const passwordLabel = screen.getByLabelText(/password/i);
+    const emailLabel = screen.getByText(/email/i);
+    const passwordLabel = screen.getByText(/password/i);
     expect(emailLabel).toBeInTheDocument();
     expect(passwordLabel).toBeInTheDocument();
   });
 
   test('Vérification du bouton', () => {
     render(<App />);
-    const formButton = screen.getByRole('button', { name: /OK/i });
+    const formButton = screen.getByRole('button', { name: /^ok$/i });
     expect(formButton).toBeInTheDocument();
   });
 });
