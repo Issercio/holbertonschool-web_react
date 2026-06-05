@@ -15,10 +15,12 @@ class Notifications extends Component {
   }
 
   render() {
+    const titleClass = this.props.notifications.length > 0 && !this.props.displayDrawer ? 'animate-bounce' : '';
+
     return (
       <div className='Notification-Component flex flex-wrap justify-end mr-2.5'>
         <div className="notification-title text-right w-full">
-          <p>Your notifications</p>
+          <p className={titleClass}>Your notifications</p>
         </div>
         {
           this.props.displayDrawer && <div className="notification-items border-dashed border-[var(--main-color)] border-[2.5px] w-full md:w-[25vw] p-3 md:p-[6px] flex flex-wrap mb-4">
