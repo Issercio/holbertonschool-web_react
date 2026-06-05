@@ -1,7 +1,7 @@
 function CourseListRow({ isHeader = false, textFirstCell = '', textSecondCell = null }) {
   let trContent = <>
-    <td className="border border-gray-400 pl-[8px]">{ textFirstCell }</td>
-    <td className="border border-gray-400 pl-[8px]">{ textSecondCell }</td>
+    <td className="border border-gray-400 pl-[8px] pl-2">{ textFirstCell }</td>
+    <td className="border border-gray-400 pl-[8px] pl-2">{ textSecondCell }</td>
   </>;
   if (isHeader) {
     if (textSecondCell === null) {
@@ -15,7 +15,13 @@ function CourseListRow({ isHeader = false, textFirstCell = '', textSecondCell = 
     }
   }
   return(
-    <tr className={isHeader ? "bg-table-header/[66%]" : "bg-table-rows/[45%]"}>{ trContent }</tr>
+    <tr
+      className={isHeader ? "bg-table-header/[66%]" : "bg-table-rows/[45%]"}
+      style={{
+        backgroundColor: isHeader ? 'var(--color-table-header)' : 'var(--color-table-rows)',
+        opacity: isHeader ? '0.66' : '0.45'
+      }}
+    >{ trContent }</tr>
   )
 }
 
