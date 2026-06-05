@@ -34,11 +34,11 @@ class App extends Component {
 
     return (
       <Fragment>
-        <div className="header flex flex-col md:flex-row justify-between items-start md:items-center px-2 md:px-4 py-2 md:py-4">
-          <div className="header-wrapper grow w-full md:w-auto">
+        <div className="header flex justify-between items-center px-2 md:px-4 py-2 md:py-4">
+          <div className="header-wrapper grow">
             <Header />
           </div>
-          <div className="root-notifications w-full md:w-auto mt-4 md:mt-0">
+          <div className="root-notifications">
             <Notifications notifications={notificationsList} />
           </div>
         </div>

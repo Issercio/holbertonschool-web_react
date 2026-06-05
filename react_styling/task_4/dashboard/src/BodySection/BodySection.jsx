@@ -4,10 +4,8 @@ class BodySection extends Component {
   render() {
     return(
       <div className="bodySection mt-auto px-2 md:px-4">
-        <h2 className="font-bold text-sm md:text-base lg:text-lg">{ this.props.title }</h2>
-        <div className="text-xs md:text-sm">
-          {this.props.children}
-        </div>
+        <h2 className="font-bold">{ this.props.title }</h2>
+        {this.props.children}
       </div>
     )
   }

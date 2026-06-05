@@ -21,7 +21,7 @@ class Notifications extends Component {
           <p>Your notifications</p>
         </div>
         {
-          this.props.displayDrawer && <div className="notification-items border-dashed border-[var(--main-color)] border-[2.5px] w-full md:w-[25vw] p-3 md:p-[6px] flex flex-wrap mb-4 max-h-screen md:max-h-none overflow-y-auto">
+          this.props.displayDrawer && <div className="notification-items border-dashed border-[var(--main-color)] border-[2.5px] w-full md:w-[25vw] p-3 md:p-[6px] flex flex-wrap mb-4">
             {this.props.notifications.length !== 0 && <p>Here is the list of notifications</p>}
             {this.props.notifications.length !== 0 && <button aria-label='Close' style={{
               width: '1.75rem',
@@ -35,7 +35,7 @@ class Notifications extends Component {
             onClick={this.handleClick}>
               <img className='w-[70%]' src={CloseButton} />
             </button>}
-            <ul className='w-full list-none md:list-[square] list-inside md:list-inside pl-0 md:pl-1 space-y-2 md:space-y-0'>
+            <ul className='w-full list-[square] list-inside pl-1 md:pl-1'>
               {this.props.notifications.length===0 ? 'No new notification for now' :
                 this.props.notifications.map((notification) => (
                 <NotificationItem
