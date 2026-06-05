@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import CloseButton from '../assets/close-button.png';
 import NotificationItem from './NotificationItem';
-import './Notifications.css';
 
 class Notifications extends Component {
   handleClick = () => console.log('Close button has been clicked');
@@ -16,13 +15,43 @@ class Notifications extends Component {
   }
 
   render() {
+    const shouldAnimate = this.props.notifications.length > 0 && !this.props.displayDrawer;
+    const titleStyles = {
+      width: '100%',
+      textAlign: 'end',
+      animation: shouldAnimate ? 'bounce 1s infinite' : 'none'
+    };
+    const notificationComponentStyles = {
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'flex-end'
+    };
+    const notificationTitleStyles = {
+      width: '100%',
+      textAlign: 'end'
+    };
+    const notificationItemsStyles = {
+      border: '#e1003c dotted 2.5px',
+      display: 'flex',
+      flexWrap: 'wrap',
+      width: '60%',
+      marginBottom: '1rem'
+    };
+    const imageStyles = {
+      width: '70%'
+    };
+    const ulStyles = {
+      width: '100%'
+    };
+
     return (
-      <div className='Notification-Component'>
-        <div className="notification-title">
-          <p>Your notifications</p>
+      <div className='Notification-Component' style={notificationComponentStyles}>
+        <style>{`@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }`}</style>
+        <div style={notificationTitleStyles}>
+          <p style={titleStyles}>Your notifications</p>
         </div>
         {
-          this.props.displayDrawer && <div className="notification-items">
+          this.props.displayDrawer && <div style={notificationItemsStyles}>
             <p>Here is the list of notifications</p>
             <button aria-label='Close' style={{
               width: '1.75rem',
@@ -34,9 +63,9 @@ class Notifications extends Component {
               cursor: 'pointer'
             }}
             onClick={this.handleClick}>
-              <img src={CloseButton} />
+              <img src={CloseButton} style={imageStyles} />
             </button>
-            <ul>
+            <ul style={ulStyles}>
               {this.props.notifications.length===0 ? 'No new notification for now' :
                 this.props.notifications.map((notification) => (
                 <NotificationItem
