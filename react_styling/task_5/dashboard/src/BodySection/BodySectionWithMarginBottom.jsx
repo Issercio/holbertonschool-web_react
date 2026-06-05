@@ -4,7 +4,7 @@ import BodySection from "./BodySection";
 class BodySectionWithMarginBottom extends Component {
   render() {
     return(
-      <div className="bodySectionWithMargin mb-4 md:mb-10">
+      <div className="bodySectionWithMargin">
         <BodySection title={this.props.title}>
           {this.props.children}
         </BodySection>

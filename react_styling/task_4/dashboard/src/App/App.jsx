@@ -1,4 +1,4 @@
-import { Component, Fragment } from 'react';
+import { Component } from 'react';
 import Notifications from '../Notifications/Notifications.jsx';
 import Header from '../Header/Header.jsx';
 import LoginForm from '../Login/Login.jsx';
@@ -33,8 +33,8 @@ class App extends Component {
     ];
 
     return (
-      <Fragment>
-        <div className="header flex justify-between items-center px-2 md:px-4 py-2 md:py-4">
+      <div className='flex flex-col min-h-screen'>
+        <div className="header flex md:justify-between flex-col-reverse md:flex-row md:items-center">
           <div className="header-wrapper grow">
             <Header />
           </div>
@@ -42,21 +42,21 @@ class App extends Component {
             <Notifications notifications={notificationsList} />
           </div>
         </div>
-        <div className="flex flex-col flex-1 px-2 md:px-4">
-          {this.props.isLoggedIn ?
-            <BodySectionWithMarginBottom title={'Course list'}>
-              <CourseList courses={coursesList} />
-            </BodySectionWithMarginBottom>:
-            <BodySectionWithMarginBottom title={'Log in to continue'}>
-              <LoginForm />
-            </BodySectionWithMarginBottom>
-          }
-          <BodySection title={'News from the School'}>
-            <p>ipsum Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique, asperiores architecto blanditiis fuga doloribus sit illum aliquid ea distinctio minus accusantium, impedit quo voluptatibus ut magni dicta. Recusandae, quia dicta?</p>
-          </BodySection>
-        </div>
+        {this.props.isLoggedIn ?
+          <BodySectionWithMarginBottom title={'Course list'}>
+            <CourseList courses={coursesList} />
+          </BodySectionWithMarginBottom>:
+          <BodySectionWithMarginBottom title={'Log in to continue'}>
+            <LoginForm />
+          </BodySectionWithMarginBottom>
+        }
+        <BodySection title={'News from the School'}>
+          <p className='pl-4'>ipsum Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Similique, asperiores architecto blanditiis fuga doloribus sit illum aliquid ea distinctio
+            minus accusantium, impedit quo voluptatibus ut magni dicta. Recusandae, quia dicta?</p>
+        </BodySection>
         <Footer />
-      </Fragment>
+      </div>
     )
   }
 

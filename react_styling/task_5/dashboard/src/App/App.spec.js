@@ -72,7 +72,8 @@ describe('App component', () => {
   test('Vérification de la présence des éléments du composant BodySection (h2 & paragraph)', () => {
     render(<App />);
     const BodySectionh2 = screen.getByRole('heading', { level: 2, name: /News from the School/i });
-    const BodySectionp = screen.getByText(/ipsum Lorem ipsum dolor sit amet consectetur/i);
+    // const BodySectionp = screen.getByText(/Holberton School News goes here/i);
+    const BodySectionp = screen.getByText(/ipsum Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique, asperiores architecto blanditiis fuga doloribus sit illum aliquid ea distinctio minus accusantium, impedit quo voluptatibus ut magni dicta. Recusandae, quia dicta?/i);
     expect(BodySectionh2).toBeInTheDocument();
     expect(BodySectionp).toBeInTheDocument();
   });

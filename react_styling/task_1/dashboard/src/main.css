@@ -11,8 +11,3 @@
     font-family: var(--font-family-roboto);
   }
 }
-
-:root {
-  --color-table-header: #deb5b5;
-  --color-table-rows: #CDCDCD;
-}
